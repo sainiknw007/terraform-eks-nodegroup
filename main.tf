@@ -6,7 +6,7 @@ data "aws_subnets" "available-subnets"{
 }
 
 resource "aws_eks_cluster" "ankit-cluster" {
-  name     = "ankit-cluster"
+  name     = var.cluster_name
   role_arn = aws_iam_role.example.arn
 
   vpc_config {
