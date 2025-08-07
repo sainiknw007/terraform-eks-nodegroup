@@ -6,7 +6,7 @@ data "aws_subnets" "available-subnets"{
 }
 
 resource "aws_eks_cluster" "ankit-cluster" {
-  name     = "ankit-cluster"
+  name     = var.cluster_name
   role_arn = aws_iam_role.example.arn
 
   vpc_config {
@@ -35,7 +35,7 @@ resource "aws_eks_node_group" "node-grp" {
   node_role_arn   = aws_iam_role.worker.arn
   subnet_ids      = data.aws_subnets.available-subnets.ids
   capacity_type   = "ON_DEMAND"
-  disk_size       = "8"
+  disk_size       = "20"
   instance_types  = ["t2.micro"]
   labels = tomap({ env = "dev" })
 
