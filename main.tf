@@ -1,4 +1,4 @@
-data "aws_subnets" "available-subnets"{
+data "aws_subnet" "available-subnets"{
     filter {
         name = "tag:Name"
         values = ["Our-Public-*"]
