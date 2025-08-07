@@ -5,7 +5,7 @@ data "aws_subnet" "available-subnets"{
     }
 }
 
-resource "aws_eks_cluster" "akhiesh-eks-cluster" {
+resource "aws_eks_cluster" "akhilesh-eks-cluster" {
   name     = var.cluster_name
   role_arn = aws_iam_role.example.arn
 
